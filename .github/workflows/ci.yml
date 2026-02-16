@@ -1,0 +1,65 @@
+name: CI
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [20.x]
+
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v4
+      with:
+        node-version: ${{ matrix.node-version }}
+        cache: 'npm'
+        cache-dependency-path: |
+          panel/back/package-lock.json
+          panel/front/package-lock.json
+          player/package-lock.json
+
+    # panel/back checks
+    - name: panel/back - Install dependencies
+      run: cd panel/back && npm ci
+
+    # - name: panel/back - Run linting
+      # run: cd panel/back && npm run lint
+
+    - name: panel/back - Run tests
+      run: cd panel/back && npm run test
+
+    - name: panel/back - Build
+      run: cd panel/back && npm run build
+    
+    # panel/front checks
+    - name: panel/front - Install dependencies
+      run: cd panel/front && npm ci
+
+    # - name: panel/front - Run linting
+      # run: cd panel/front && npm run lint
+
+    # - name: panel/front - Run tests
+      # run: cd panel/front && npm run test
+
+    - name: panel/front - Build
+      run: cd panel/front && npm run build
+
+
+    # player checks
+    - name: player - Install dependencies
+      run: cd player && npm ci
+
+    # - name: player - Run linting
+      # run: cd player && npm run lint
+
+    - name: player - Build
+      run: cd player && npm run build

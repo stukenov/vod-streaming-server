@@ -1,0 +1,90 @@
+{
+  "name": "adapto.31kz.vod.panel.back",
+  "version": "0.0.1",
+  "description": "",
+  "author": "",
+  "private": true,
+  "license": "UNLICENSED",
+  "scripts": {
+    "build": "nest build",
+    "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
+    "start": "nest start",
+    "dev": "nest start --watch",
+    "start:debug": "nest start --debug --watch",
+    "prod": "pm2 start dist/main.js --name 'adapto.31kz.vod.panel.back'",
+    "lint": "eslint \"{src,apps,libs,test}/**/*.ts\" --fix",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:cov": "jest --coverage",
+    "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
+    "test:e2e": "jest --config ./test/jest-e2e.json"
+  },
+  "dependencies": {
+    "@aws-sdk/client-s3": "*",
+    "@aws-sdk/s3-request-presigner": "*",
+    "@nestjs/bull": "^11.0.2",
+    "@nestjs/common": "*",
+    "@nestjs/config": "^4.0.0",
+    "@nestjs/core": "*",
+    "@nestjs/platform-express": "^11.0.10",
+    "@nestjs/typeorm": "^11.0.0",
+    "@tus/file-store": "^1.5.1",
+    "@tus/server": "^1.10.2",
+    "@types/bull": "^3.15.9",
+    "@types/multer": "^1.4.12",
+    "bull": "^4.16.5",
+    "class-transformer": "*",
+    "class-validator": "*",
+    "multer": "^1.4.5-lts.1",
+    "mysql2": "^3.12.0",
+    "redis": "^4.7.0",
+    "reflect-metadata": "*",
+    "rxjs": "*",
+    "sqlite3": "*",
+    "typeorm": "*"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "*",
+    "@eslint/js": "*",
+    "@nestjs/cli": "*",
+    "@nestjs/schematics": "*",
+    "@nestjs/testing": "*",
+    "@swc/cli": "*",
+    "@swc/core": "*",
+    "@types/express": "*",
+    "@types/jest": "*",
+    "@types/node": "*",
+    "@types/supertest": "*",
+    "eslint": "*",
+    "eslint-config-prettier": "*",
+    "eslint-plugin-prettier": "*",
+    "globals": "*",
+    "jest": "*",
+    "prettier": "*",
+    "source-map-support": "*",
+    "supertest": "*",
+    "ts-jest": "*",
+    "ts-loader": "*",
+    "ts-node": "*",
+    "tsconfig-paths": "*",
+    "typescript": "*",
+    "typescript-eslint": "*"
+  },
+  "jest": {
+    "moduleFileExtensions": [
+      "js",
+      "json",
+      "ts"
+    ],
+    "rootDir": "src",
+    "testRegex": ".*\\.spec\\.ts$",
+    "transform": {
+      "^.+\\.(t|j)s$": "ts-jest"
+    },
+    "collectCoverageFrom": [
+      "**/*.(t|j)s"
+    ],
+    "coverageDirectory": "../coverage",
+    "testEnvironment": "node"
+  }
+}

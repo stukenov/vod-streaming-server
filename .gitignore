@@ -1,0 +1,57 @@
+# Dependencies
+node_modules/
+.pnp
+.pnp.js
+
+# Testing
+coverage/
+.nyc_output
+
+# Next.js
+.next/
+out/
+build/
+dist/
+player/dist/
+
+# Environment files
+.env
+.env.local
+.env.*.local
+panel/back/.env
+panel/front/.env
+player/.env
+
+# Production
+/build
+
+# Debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+.pm2/
+
+# Misc
+.DS_Store
+*.pem
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Uploads
+panel/back/uploads/
+panel/back/tus-files/
+
+# Database
+*.sqlite
+*.db
+
+# OS
+.DS_Store
+Thumbs.db
