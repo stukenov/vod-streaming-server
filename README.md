@@ -1,5 +1,13 @@
 # VOD Streaming Server
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![NestJS](https://img.shields.io/badge/NestJS-11-E0234E?logo=nestjs&logoColor=white)](https://nestjs.com/)
+[![Next.js](https://img.shields.io/badge/Next.js-15-000000?logo=nextdotjs&logoColor=white)](https://nextjs.org/)
+[![CI](https://github.com/stukenov/vod-streaming-server/actions/workflows/ci.yml/badge.svg)](https://github.com/stukenov/vod-streaming-server/actions/workflows/ci.yml)
+
+> Self-hosted Video-on-Demand platform — resumable TUS uploads, Bull-queued HLS transcoding, and an adaptive-bitrate player, wired together with a NestJS API and a Next.js admin panel.
+
 A complete Video-on-Demand (VOD) streaming platform with content management panel, video processing pipeline, and HLS player. Features resumable uploads, queue-based processing, and MySQL database.
 
 ## Features
@@ -458,6 +466,13 @@ Saken Tukenov
 ## Contributing
 
 Contributions are welcome! Please feel free to submit a Pull Request.
+
+## Related projects
+
+This VOD platform is part of a broader broadcast and streaming suite:
+
+- [live-streaming-server](https://github.com/stukenov/live-streaming-server) — Live streaming ingest and delivery server.
+- [fast-tv-playout-core](https://github.com/stukenov/fast-tv-playout-core) — Linear TV playout core for scheduled, channel-based broadcast.
 
 ## Acknowledgments
 
